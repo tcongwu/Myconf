@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>系统管理员</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<link href="/css/global.css" rel="stylesheet" type="text/css">
+<SCRIPT language="javascript" src="/js/common.js" type="text/javascript"></SCRIPT>
+</head>
+
+<body>
+<table width="778" border="0" align="center" cellpadding="3" cellspacing="0" class="float_bar">
+  <tr> 
+    <td width="268">&nbsp;<a href="#"><b>简体</b></a>&nbsp;|&nbsp;<a href="#"><b>繁体</b></a>&nbsp;|&nbsp;<a href="#"><b>ENGLISH</b></a></td>
+    <td width="498" align="right">欢迎光临，系统管理员 | <a href="#">个人信息</a> | <a href="#">修改密码</a> 
+      | <a href="#">注销</a>&nbsp;</td>
+  </tr>
+</table>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="160"><img src="/images/logo.gif" width="158" height="60"></td>
+    <td width="618"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="19">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td class="banner_block">专家评审<span class="gray">——</span><span class="blackbold">ICCE2004</span></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width="778" height="31" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="10" class="channel_bar_left">&nbsp;</td>
+    <td width="576" class="channel_bar_bg"><div class="fleft sitenav"><a href="/">审稿须知</a><a class="nav_on"><a class="selected" href="/html/diary/">申请评审</a></a><a href="/html/photo/">待审稿件</a><a class="split"></a><a href="/html/photo/">已审稿件</a><a class="split"></a><a href="/html/photo/">会议论坛</a></div></td>
+    <td width="182" style="PADDING-TOP: 2px;" align="right" class="channel_bar_bg"><select name="select">
+        <option selected>切换角色</option>
+        <option value="1">系统管理员</option>
+      </select> &nbsp;</td>
+    <td width="10" class="channel_bar_right">&nbsp;</td>
+  </tr>
+</table>
+<br>
+<TABLE width=778 height="84" border=0 align="center" cellPadding=0 cellSpacing=0 summary=null>
+  <TBODY>
+    <TR> 
+      <TD noWrap width=778 colSpan=2 height=5><img src="/images/rounded_top.gif" width="778" height="5"></TD>
+    </TR>
+    <TR> 
+      <TD width=1 height="73" noWrap bgColor=#a9a9a9><SPACER type="block" width="1"></TD>
+      <TD width=776 noWrap>
+		<table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td class="pagecontent_title"><b>申请评审</b></td>
+          </tr>
+        </table>
+        <form action="/bid.do" method="post" name="bid" id="bid">
+          <br>
+          <table width="88%" border="0" align="center" cellpadding="0" cellspacing="0" class="form">
+            <tr> 
+              <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_note">
+                  <tr> 
+                    <td> <li>搜索框中的【编号】、【所属主题】和【关键字】之间是“与(AND)”的关系，如果不输入任何条件，系统将列出所有稿件。</li></td>
+                  </tr>
+                </table></td>
+            </tr>
+          </table>
+          <table width="88%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+            <tr> 
+              <td width="18%" class="form_row_title">编号：</td>
+              <td class="form_row_content"><input name="id" type="text" id="id" size="18">
+                {稿件的编号} </td>
+            </tr>
+          </table>
+          <table width="88%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+            <tr> 
+              <td width="18%" class="form_row_title">所属主题：</td>
+              <td class="form_row_content"><select name="subject" id="subject">
+                  <option selected>请选择</option>
+                  <option value="1">啊啊啊</option>
+                </select></td>
+            </tr>
+          </table>
+          <table width="88%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+            <tr> 
+              <td width="18%" class="form_row_title">关键字：</td>
+              <td class="form_row_content"><input name="keyword" type="text" id="keyword" size="28">
+                {检索标题和摘要中的关键字}</td>
+            </tr>
+          </table>
+          <table width="88%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+            <tr> 
+              <td nowrap class="form_row_submit"><input name="sub" type="submit" class="button" id="sub" value="搜索符合条件的稿件"> 
+              </td>
+            </tr>
+          </table>
+        </form>
+        
+        <table width="88%" align="center" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td width="52%"> <div class="spacer_20"></div>
+              <div class="line_dashed"></div>
+              <div class="spacer_10"></div></td>
+          </tr>
+        </table>
+        <table width="88%" border="0" align="center" cellpadding="3" cellspacing="1" class="table">
+          <tr> 
+            <td width="7%" align="center" nowrap class="table_head">编号</td>
+            <td width="55%" class="table_head" nowrap>稿件标题</td>
+            <td width="32%" nowrap class="table_head">所属主题</td>
+            <td width="6%" align="center" class="table_head" nowrap>查看</td>
+          </tr>
+          <tr> 
+            <td align="center" class="table_cell">1</td>
+            <td class="table_cell">q adsf aasd asd aa sd </td>
+            <td class="table_cell">5撒撒撒</td>
+            <td align="center" class="table_cell"><a href="#"><img src="/images/bid.gif" width="22" height="20" border="0"></a> 
+            </td>
+          </tr>
+          <tr> 
+            <td align="center" nowrap class="table_cell">2</td>
+            <td class="table_cell">q adsf aasd as</td>
+            <td class="table_cell">5撒撒撒</td>
+            <td align="center" class="table_cell"><a href="#"><img src="/images/bid.gif" width="22" height="20" border="0"></a> 
+            </td>
+          </tr>
+        </table>
+        <table width="88%" border="0" align="center" cellpadding="5" cellspacing="0" style="border-bottom:#cccccc 1px solid">
+          <tr> 
+            <td align="right" nowrap><a href="#" class="blue">&lt;上一页</a>&nbsp;&nbsp;&nbsp;<a href="#" class="blue">下一页&gt;</a>&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </TD>
+      <TD noWrap width=1 bgColor=#a9a9a9><SPACER type="block" width="1"></TD>
+    </TR>
+    <TR> 
+      <TD noWrap width=778 colSpan=2 height=6><img src="/images/rounded_bottom.gif" width="778" height="5"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<div class="spacer_20"></div>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" class="footer">
+  <tr>
+    <td><a href="www.myconf.org">MyConf.org</a>&nbsp;
+	&#153;&nbsp;2007&nbsp;&copy;&nbsp;All Right Reserved.&nbsp;&nbsp;
+	Powered by <a href="http://www.myconf.org" target="_blank">MYCONF</a>&nbsp;1.0&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

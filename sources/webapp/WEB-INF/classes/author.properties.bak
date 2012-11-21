@@ -1,0 +1,57 @@
+#---interface of author module---
+#--special phrase for each page in author module, for example login page etc.--
+page.login.olduser=the user who has already submitted(you can submit one or more paper)
+page.login.newuser=the user who want to submit for the first time
+page.existuser.exist=the email already exists, please retype
+page.subpage.title.profile=paper information
+page.subpage.ins.profile=Fields marked with an asterisk * are required.
+page.subpage.form.title=title:
+page.subpage.form.subject=subject category:
+page.subpage.form.subject.please=please select the subject
+page.subpage.form.abstract=abstract:
+page.subpage.form.abstract.ins=Please do not mention author's name in the abstract, the abstract is <strong> less than 300 words </strong>!
+page.subpage.title.author=author information
+page.subpage.ins.author1=Fields marked with an asterisk * are required.
+page.subpage.ins.author2=less than 18 authors' information
+page.subpage.form.author.firstname=given name
+page.subpage.form.author.lastname=family name
+page.subpage.form.author.email=email
+page.subpage.form.author.institute=organization
+page.subpage.form.addauthor=add
+page.subpage.form.lessauthor=delete
+page.subpage.title.contact=contact information
+page.subpage.ins.contact=Fields marked with an asterisk * are required.
+page.subpage.form.ctitle=appellation:
+ page.subpage.form.firstname=given name:
+page.subpage.form.lastname=family name:
+page.subpage.form.worklocation=organization:
+page.subpage.form.research=research field:
+page.subpage.form.phone=phone:
+page.subpage.form.fax=fax:
+page.subpage.form.address=detail address:
+page.subpage.form.state=province:
+page.subpage.form.country=nation:
+page.subpage.form.postcode=postal code:
+page.subpage.title.upload=upload paper
+page.subpage.ins.upload=The paper you upload should be in the format of one of the listed.
+page.subpage.form.submit=submit paper
+page.mypaper.stage.none=welcome submission {0}
+page.mypaper.stage.submission=the conference is at the stage of submission:{0}-{1}
+page.mypaper.stage.review=the conference is at the stage of review:{0}-{1}
+page.mypaper.stage.confirm=the conference is at the stage of camera-ready:{0}-{1}
+page.mypaper.stage.done=all the review work has been done
+page.mypaper.table.no=paper ID
+page.mypaper.table.title=title
+pape.mypaper.table.status=status
+pape.mypaper.status.forreview=waiting...
+pape.mypaper.status.reviewing=reviewing...
+pape.mypaper.status.reviewed=reviewed...
+page.mypaper.do.confirm=upload the comera-ready paper
+page.modpaper.upload=Note:the new paper uploaded will cover the original one,if you do not select a new paper, only modify the information above and keep the original paper
+page.modpaper.check=view the paper
+
+#--page menu information--
+menu.top.instruction=submission tips
+menu.top.submission=submission
+menu.top.mypaper=my paper
+

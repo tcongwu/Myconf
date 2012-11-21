@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.myconf.beans">
+
+	<class name="ReferBean" table="Myconf_ReviewRefer" batch-size="20" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<property name="referNo" column="referno" type="integer" not-null="true" unique="true"/>
+		<property name="status" column="rstatus" type="integer"/>
+		<property name="title" type="string" length="255" not-null="true"/>
+		<property name="minScore" column="minscore" type="float"/>
+		<property name="maxScore" column="maxscore" type="float" not-null="true"/>
+		<property name="description" type="string" length="2000"/>
+		
+	</class>
+
+	<class name="ReviewBean" table="Myconf_ReviewPaper" batch-size="200" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<many-to-one name="paper" column="paperid" class="PaperBean" cascade="none" update="false"/>
+		<many-to-one name="expert" column="expertid" class="UserBean" cascade="none" update="false"/>
+		<property name="expertName" column="expertname" type="string" length="90" not-null="true"/>
+		<property name="status" column="gstatus" type="integer" not-null="true" index="review_status_idx"/>
+		
+		<property name="score1" type="float"/>
+		<property name="score2" type="float"/>
+		<property name="score3" type="float"/>
+		<property name="score4" type="float"/>
+		<property name="score5" type="float"/>
+		<property name="score6" type="float"/>
+		<property name="score7" type="float"/>
+		<property name="score8" type="float"/>
+		<property name="score9" type="float"/>
+		<property name="score10" type="float"/>
+		<property name="score11" type="float"/>
+		<property name="score12" type="float"/>
+		<property name="score13" type="float"/>
+		<property name="score14" type="float"/>
+		<property name="score15" type="float"/>
+		<property name="score16" type="float"/>
+		<property name="totalScore" column="totalscore" type="float" index="review_totalscore_idx"/>
+		<property name="recoStatus" column="recostatus" type="integer" index="review_recostatus_idx"/>
+		<property name="opinion" type="string" length="8000"/>
+		<property name="reviewTime" type="timestamp">
+			<column name="reviewtime" default="null"/>
+		</property>
+		
+	</class>
+
+	<class name="BidBean" table="Myconf_ReviewBid" batch-size="200" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<many-to-one name="paper" column="paperid" class="PaperBean" cascade="none" update="false"/>
+		
+		<property name="expertId" column="expertid" type="integer" not-null="true"/>
+		<property name="expertName" column="expertname" type="string" length="90" not-null="true"/>
+		<property name="research" type="string" length="100"/>
+
+		<property name="bidTime" type="timestamp">
+			<column name="bidtime" default="null"/>
+		</property>
+		
+	</class>
+
+	<class name="WordsBean" table="Myconf_ReviewWords" batch-size="200" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<many-to-one name="paper" column="paperid" class="PaperBean" cascade="none" update="false"/>
+		
+		<property name="userId" column="userid" type="integer" not-null="true"/>
+		<property name="firstName" column="firstname" type="string" length="45" not-null="true"/>
+		<property name="lastName" column="lastname" type="string" length="45" not-null="true"/>
+		<property name="content" type="string" length="20000"/>
+
+		<property name="createTime" type="timestamp">
+			<column name="createtime" default="null"/>
+		</property>
+		
+	</class>
+	
+</hibernate-mapping>

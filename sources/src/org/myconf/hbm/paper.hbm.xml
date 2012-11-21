@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.myconf.beans">
+
+	<class name="PaperBean" table="Myconf_PaperInfo" batch-size="20" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<many-to-one name="subUser" column="userid" class="UserBean" cascade="none" update="false"/>
+		
+		<property name="title" type="string" length="255" not-null="true" index="paper_title_idx"/>
+		<property name="state" type="integer" not-null="true" index="paper_state_idx"/>
+		<property name="abstr" column="abstract" type="string" length="3000"/>
+		<property name="filePath" column="filepath" type="string" length="50"/>
+		<property name="authorNames" column="authors" type="string" length="255" not-null="true"/>
+		
+		<many-to-one name="subject" column="asubject" class="SubjectBean" cascade="none" update="false" index="paper_suject_idx"/>
+		<property name="status" column="astatus" type="integer" not-null="true" index="paper_status_idx"/>
+		
+		<property name="score" type="float" index="paper_score_idx"/>
+
+		<property name="regTime" type="timestamp">
+			<column name="regtime" default="null"/>
+		</property>
+		<property name="updateTime" type="timestamp">
+			<column name="updatetime" default="null"/>
+		</property>
+
+		<bag name="authors" lazy="true" inverse="true" cascade="all" order-by="orderno">
+			<key column="paperid"/>
+			<one-to-many class="AuthorBean"/>
+		</bag>
+
+		<bag name="reviews" lazy="true" inverse="true" cascade="delete">
+			<key column="paperid"/>
+			<one-to-many class="ReviewBean"/>
+		</bag>
+
+		<bag name="bids" lazy="true" inverse="true" cascade="delete">
+			<key column="paperid"/>
+			<one-to-many class="BidBean"/>
+		</bag>
+
+		<bag name="words" lazy="true" inverse="true" cascade="delete" order-by="id desc">
+			<key column="paperid"/>
+			<one-to-many class="WordsBean"/>
+		</bag>
+		
+	</class>
+
+	<class name="AuthorBean" table="Myconf_PaperAuthor" batch-size="10" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<many-to-one name="paper" column="paperid" class="PaperBean" cascade="none" update="false"/>
+		<property name="orderNo" column="orderno" type="integer" not-null="true"/>
+		<property name="firstName" column="firstname" type="string" length="45" not-null="true"/>
+		<property name="lastName" column="lastname" type="string" length="45" not-null="true"/>
+		<property name="email" type="string" length="50"/>
+		<property name="institute" type="string" length="255"/>
+
+		<property name="regTime" type="timestamp">
+			<column name="regtime" default="null"/>
+		</property>
+		<property name="updateTime" type="timestamp">
+			<column name="updatetime" default="null"/>
+		</property>
+		
+	</class>
+
+	<class name="SubjectBean" table="Myconf_PaperSubject" batch-size="50" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<property name="subject" type="string" length="255"/>
+
+		<property name="regTime" type="timestamp">
+			<column name="regtime" default="null"/>
+		</property>
+		<property name="updateTime" type="timestamp">
+			<column name="updatetime" default="null"/>
+		</property>
+
+		<bag name="papers" lazy="true" inverse="true" cascade="none">
+			<key column="asubject"/>
+			<one-to-many class="PaperBean"/>
+		</bag>
+		
+	</class>
+
+	<class name="StatusBean" table="Myconf_PaperStatus" batch-size="20" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<property name="status" column="astatus" type="string" length="45"/>
+
+		<property name="regTime" type="timestamp">
+			<column name="regtime" default="null"/>
+		</property>
+		<property name="updateTime" type="timestamp">
+			<column name="updatetime" default="null"/>
+		</property>
+		
+	</class>
+	
+</hibernate-mapping>

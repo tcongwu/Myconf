@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.myconf.beans">
+
+	<class name="UserBean" table="Myconf_UserInfo" batch-size="50" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<property name="email" type="string" length="50" not-null="true" unique="true"/>
+		<property name="cryptPassword" column="password" type="string" length="50" not-null="true"/>
+		
+		<component name="name" class="org.myconf.beans.base.NameInfo">
+			<property name="title" type="string" length="10"/>
+			<property name="firstName" column="firstname" type="string" length="45"/>
+			<property name="lastName" column="lastname" type="string" length="45"/>
+		</component>
+		
+		<property name="realName" column="realname" type="string" length="90"/>
+		<property name="workLocation" column="worklocation" type="string" length="100"/>
+		<property name="research" type="string" length="100"/>
+		<property name="phone" type="string" length="28"/>
+		<property name="fax" type="string" length="28"/>
+		<property name="address" type="string" length="255"/>
+		<property name="postcode" type="string" length="12"/>
+		<property name="state" type="string" length="20"/>
+		<property name="country" type="string" length="20" index="userinfo_country_idx"/>
+		<property name="isAdmin" column="isadmin" type="integer"/>
+		<property name="isExpert" column="isexpert" type="integer" index="userinfo_expert_idx"/>
+		<property name="isContent" column="iscontent" type="integer"/>
+		<property name="isAuthor" column="isauthor" type="integer"/>
+		<property name="role" column="urole" type="string" length="8"/>
+		<property name="status" column="ustatus" type="integer"/>
+
+		<property name="onlineStatus" column="isonline" type="integer" index="userinfo_online_idx"/>
+		<property name="loginCount" column="logincount" type="integer"/>
+		<property name="regTime" type="timestamp">
+			<column name="regtime" default="null"/>
+		</property>
+		<property name="lastTime" type="timestamp">
+			<column name="lasttime" default="null"/>
+		</property>
+		<property name="lastAddr" column="lastaddr" type="string" length="45"/>
+
+		<bag name="papers" lazy="true" inverse="true" cascade="delete">
+			<key column="userid"/>
+			<one-to-many class="PaperBean"/>
+		</bag>
+
+		<bag name="reviews" lazy="true" inverse="true" cascade="delete">
+			<key column="expertId"/>
+			<one-to-many class="ReviewBean"/>
+		</bag>
+		
+	</class>
+
+	<class name="BBSBean" table="Myconf_BBSInfo" batch-size="20" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<property name="boardName" column="boardname" type="string" length="50" not-null="true" index="bbs_boardname_idx"/>
+		
+		<property name="parentId" column="parentid" type="integer" index="bbs_parentid_idx"/>
+		<property name="title" type="string" length="100"/>
+		<property name="content" type="string" length="10000"/>
+		<property name="isTop" column="istop" type="integer" index="bbs_istop_idx"/>
+		<property name="status" column="astatus" type="integer"/>
+		<property name="authorId" column="authorid" type="integer"/>
+		<property name="authorName" column="authorname" type="string" length="90"/>
+		<property name="visitCount" column="visitcount" type="integer"/>
+		<property name="replyCount" column="replycount" type="integer"/>
+
+		<property name="createTime" type="timestamp">
+			<column name="createtime" default="null"/>
+		</property>
+		
+	</class>
+
+	<class name="StatBean" table="Myconf_StatInfo" batch-size="50" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<property name="statDate" column="statdate" type="integer" index="stat_date_idx"/>
+		<property name="uvCount" column="uvcount" type="integer"/>
+		<property name="pvCount" column="pvcount" type="integer"/>
+
+		<property name="updateTime" type="timestamp">
+			<column name="updatetime" default="null"/>
+		</property>
+		
+	</class>
+
+	<class name="ConfigBean" table="Myconf_SysConfig" batch-size="1" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="assigned"/>
+		</id>
+
+		<property name="banner" type="string" length="255"/>
+		<property name="subIns" column="subins" type="string" length="20000"/>
+		<property name="subFormat" column="subformat" type="string" length="255"/>
+		<property name="subSize" column="subsize" type="integer"/>
+		<property name="subBeginDate" column="subbegindate" type="long"/>
+		<property name="subEndDate" column="subendDate" type="long"/>
+		<property name="conBeginDate" column="conbegindate" type="long"/>
+		<property name="conEndDate" column="conendDate" type="long"/>
+
+		<property name="reviewIns" column="reviewins" type="string" length="20000"/>
+		<property name="reviewBeginDate" column="reviewbegindate" type="long"/>
+		<property name="reviewEndDate" column="reviewendDate" type="long"/>
+		<property name="isAnony" column="isanony" type="integer"/>
+		
+		<property name="email" type="string" length="50"/>
+		<property name="pass" type="string" length="50"/>
+		<property name="bySSL" column="byssl" type="integer"/>
+		<property name="smtp" type="string" length="50"/>
+		<property name="port" type="integer"/>
+		
+		<property name="isProcess" column="isprocess" type="integer"/>
+		<property name="isOpen" column="isopen" type="integer"/>
+
+		<property name="updateTime" type="timestamp">
+			<column name="updatetime" default="null"/>
+		</property>
+		<property name="createTime" type="timestamp">
+			<column name="createtime" default="null"/>
+		</property>
+		
+	</class>
+	
+</hibernate-mapping>

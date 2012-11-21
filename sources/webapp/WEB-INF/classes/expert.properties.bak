@@ -1,0 +1,33 @@
+#---interface of admin module---
+
+#--page menu information--
+menu.top.reviewins=review tips
+menu.top.bid=bid for reviewing
+menu.top.reviewing=paper to review
+menu.top.reviewed=already reviewed 
+menu.top.bbs=forum
+
+#--common text--
+common.text.viewpaper=view the paper
+common.text.quit=return the paper
+common.text.review=review
+common.text.refer.no=paper ID
+common.text.refer.title=ranking criteria
+common.text.refer.description=instruction of ranking criteria
+common.text.refer.score.range=the range of score
+
+common.title.bid=bid for review:
+common.title.review.paper=review:
+common.title.grade=please score:
+common.title.recemmend.status=choice for review result:
+
+#--special phrase for each page, for example helptip etc.--
+page.reviewing.ins1=If you do not want to review the paper, please click the "return the paper" hyperlink.
+page.reviewing.ins2=Click the "review" hyperlink and enter the review page.
+page.reviewing.ins3=review starting and ending time:<span class="blackbold">{0}</span>-<span class="blackbold">{1}</span>  please finish reviewing between starting review date and ending date.
+
+page.reviewed.ins1=Click the "modify" hyperlink and  modify the review.
+
+page.reviewpaper.please.review=please score the paper:
+page.reviewpaper.opinion=general review(<font color="orange">not necessarily required</font>):
+

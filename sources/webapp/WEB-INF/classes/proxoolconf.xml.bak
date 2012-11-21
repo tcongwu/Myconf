@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<something-else-entirely>
+<proxool>
+<alias>proxoolPool</alias>
+<!--proxoolֻܹԼ-->
+<!--<driver-url>jdbc:mysql://166.111.118.155:3306/myconf?useUnicode=true&amp;characterEncoding=UTF-8</driver-url>-->
+<driver-url>jdbc:mysql://127.0.0.1:3306/myconf?useUnicode=true&amp;characterEncoding=UTF-8</driver-url>
+<driver-class>org.gjt.mm.mysql.Driver</driver-class>
+<driver-properties>
+<property name="user" value="conf"/>
+<!--<property name="password" value="dj!@#myconf"/>-->
+<property name="password" value="1234567"/>
+<property name="defaultAutoCommit" value="false"/>
+<property name="defaultReadOnly" value="false"/>
+<property name="removeAbandoned" value="true"/>
+<property name="removeAbandonedTimeout" value="120"/>
+<property name="encoding" value="true"/>
+</driver-properties>
+<!-- proxoolԶ״̬ʱ(),쵽еӾϻ,ʱ-->
+<house-keeping-sleep-time>90000</house-keeping-sleep-time>
+<!-- ָδпӿԷڶеȺ,ûӾͲᱻ-->
+<maximum-new-connections>20</maximum-new-connections>
+<!-- ٱֵĿ-->
+<prototype-count>5</prototype-count>
+<!-- ,ӣʱڶеȺĵȴmaximum-new-connections-->
+<maximum-connection-count>100</maximum-connection-count>
+<!-- С-->
+<minimum-connection-count>10</minimum-connection-count>
+</proxool>
+</something-else-entirely>

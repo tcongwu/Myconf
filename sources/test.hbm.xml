@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org">
+
+	<class name="ForumBean" table="dlog_forum" dynamic-update="true"  batch-size="20">
+		
+    		<id name="id" column="forum_id" type="int">
+			<generator class="increment"/>
+		</id>
+		
+		<property name="name" type="string" column="forum_name"/>
+		<property name="desc" type="string" column="forum_desc"/>
+		
+		<property name="type" type="int" column="forum_type" update="false"/>
+		<property name="createTime" type="timestamp" column="create_time" update="false"/>
+		<property name="lastPostTime" type="timestamp" column="last_time" insert="false"/>
+		<property name="modifyTime" type="timestamp" column="modify_time" insert="false"/>
+				
+		<property name="lastUsername" type="string" column="last_user_name" insert="false"/>
+		
+		<property name="sortOrder" type="int" column="sort_order"/>
+		<property name="topicCount" type="int" column="topic_count"/>
+				
+		<property name="option" type="int" column="forum_option"/>
+		<property name="status" type="int"/>
+		
+	</class>
+	
+</hibernate-mapping>

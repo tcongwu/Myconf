@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>系统管理员</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<link href="/css/global.css" rel="stylesheet" type="text/css">
+<SCRIPT language="javascript" src="/js/common.js" type="text/javascript"></SCRIPT>
+</head>
+
+<body>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="160"><img src="/images/logo.gif" width="158" height="60"></td>
+    <td width="618"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="19">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td class="banner_block">系统管理员<span class="gray">——</span><span class="blackbold">ICCE2004</span></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width="778" height="31" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="10" class="channel_bar_left">&nbsp;</td>
+    <td width="448" class="channel_bar_bg"><span class="bartitle">&nbsp;录用稿件：</span></td>
+    <td width="310" style="PADDING-TOP: 2px;" align="right" class="channel_bar_bg">&nbsp; 
+      </td>
+    <td width="10" class="channel_bar_right">&nbsp;</td>
+  </tr>
+</table>
+<script language="JavaScript">
+function checkForm(){
+	if (result.status.value.length == 0) {
+		alert("请选择录用结果！");
+		result.status.focus();
+		return false;
+	}
+	return true;
+}
+</script>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" style="MARGIN-TOP: 10px;">
+  <tr> 
+    <td valign="top" class="pagecontent"><form action="/paper.do" method="post" onSubmit="return checkForm()" name="result" id="result">
+        <input name="eventSubmit_Result" type="hidden" id="eventSubmit_Result" value="1">
+        <input name="id" type="hidden" id="id" value="1">
+        <input name="fromPage" type="hidden" id="fromPage" value="msgbox">
+        <br>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="85%" class="form_row_bar">稿件详细信息：</td>
+            <td width="15%" align="right" class="form_row_bar"><div align="right"><a href="#" class="blue">下载</a></div></td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td class="form_row_content_title"><table width="80%" border="0" align="center" cellpadding="0" cellspacing="6">
+                <tr>
+                  <td align="center" class="blackbold">单击【稿件标题】超链接，可以下载稿件的完整文</td>
+                </tr>
+                <tr>
+                  <td align="center"><em>斌 李, binli@tsinghua.edu.cn, 电教中心<br>
+                    斌 李, binli@tsinghua.edu.cn, 电教中心<br> </em></td>
+                </tr>
+                <tr>
+                  <td><strong>所属主题</strong>：专家评审该稿件</td>
+                </tr>
+                <tr>
+                  <td><strong>摘要：</strong> &lt;/table&gt; &lt;table width=&quot;88%&quot; 
+                    border=&quot;0&quot; align=&quot;center&quot; cellpadding=&quot;0&quot; 
+                    cellspacing=&quot;0&quot; class=&quot;form_row&quot;&gt; &lt;tr&gt; 
+                    &lt;td height=&quot;25&quot; class=&quot;form_row_content&quot;&gt; 
+                    &lt;div class=&quot;spacer_20&quot;&gt;&lt;/div&gt;<br>
+                    &lt;input name=&quot;pfile&quot; type=&quot;file&quot; id=&quot;pfile&quot; 
+                    size=&quot;58&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+                    &amp;nbsp; &amp;nbsp; &lt;a href=&quot;&lt;html:rewrite page=&quot;/viewpaper.jsp?id=&quot;/&gt;&lt;%=paper.getId()%&gt;&quot; 
+                    target=&quot;_blank&quot; class=&quot;blue&quot;&gt;&lt;bean:message 
+                    key=&quot;page.modpaper.check&quot; bundle=&quot;author&quot;/&gt;&lt;/a&gt; 
+                    &lt;div class=&quot;spacer_20&quot;&gt;&lt;/div&gt;&lt;/td&gt; 
+                    &lt;/tr&gt; &lt;/table&gt;</td>
+                </tr>
+              </table>
+              <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td class="form_row_bar">专家评审结果：</td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td class="form_row_content_author"><table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+              </table> 
+              <table width="80%" border="0" align="center" cellpadding="3" cellspacing="1" class="table">
+                <tr> 
+                  <td colspan="3" nowrap class="table_head"><strong>专家 1：李斌</strong></td>
+                </tr>
+                <tr> 
+                  <td width="9%" align="center" class="table_cell">1</td>
+                  <td width="55%" class="table_cell">q adsf aasd asd aa sd </td>
+                  <td width="36%" class="table_cell"><a href="#" title="显示该主题的所有文档">3</a></td>
+                </tr>
+                <tr> 
+                  <td align="center" nowrap class="table_cell">2</td>
+                  <td class="table_cell">q adsf aasd as</td>
+                  <td class="table_cell"><a href="#">2</a></td>
+                </tr>
+                <tr> 
+                  <td align="center" nowrap class="table_cell">－</td>
+                  <td class="table_cell">建议录用结果</td>
+                  <td class="table_cell"><a href="#">full paper</a></td>
+                </tr>
+                <tr> 
+                  <td colspan="3" class="table_cell"> <strong>评审意见：</strong>&lt;tr&gt; 
+                    &lt;td height=&quot;25&quot; class=&quot;form_row_content&quot;&gt; 
+                    &lt;div class=&quot;spacer_20&quot;&gt;&lt;/div&gt;<br> &lt;input 
+                    name=&quot;pfile&quot; type=&quot;file&quot; id=&quot;pfile&quot; 
+                    size=&quot;58&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+                    &amp;nbsp; &amp;nbsp; &lt;a href=&quot;&lt;html:rewrite page=&quot;/viewpaper.jsp?id=&quot;/&gt;&lt;%=paper.getId()%&gt;&quot; 
+                    target=&quot;_blank&quot; class=&quot;blue&quot;&gt;&lt;bean:message 
+                    key=&quot;page.modpaper.check&quot; bundle=&quot;author&quot;/&gt;&lt;/a&gt; 
+                    &lt;div class=&quot;spacer_20&quot;&gt;&lt;/div&gt;&lt;/td&gt; 
+                    &lt;/tr&gt; &lt;/table&gt;</td>
+                </tr>
+              </table>
+              <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+              <table width="80%" border="0" align="center" cellpadding="3" cellspacing="1" class="table">
+                <tr> 
+                  <td colspan="3" nowrap class="table_head"><strong>专家 2：李斌</strong></td>
+                </tr>
+                <tr> 
+                  <td width="6%" align="center" valign="top" class="table_cell">1</td>
+                  <td width="36%" valign="top" class="table_cell"><a href="#" title="单击下载完整稿件文档" class="blue">q 
+                    adsf aasd asd aa sd</a> </td>
+                  <td width="23%" valign="top" class="table_cell"><a href="#" title="显示该主题的所有文档">5撒撒撒</a></td>
+                </tr>
+                <tr> 
+                  <td align="center" valign="top" nowrap class="table_cell">2</td>
+                  <td valign="top" class="table_cell"><a href="#" class="blue">q 
+                    adsf aasd as</a></td>
+                  <td valign="top" class="table_cell"><a href="#">5撒撒撒</a></td>
+                </tr>
+              </table>
+              
+            </td>
+          </tr>
+        </table>
+        <table width="90%" align="center" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td width="52%"> <div class="spacer_20"></div>
+              <div class="line_dashed"></div>
+              <div class="spacer_10"></div></td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="16%" class="form_row_title"><strong>录用稿件：</strong></td>
+            <td class="form_row_content_title"><select name="status" id="status" style="width:168px">
+                <option selected>请选择</option>
+                <option value="1">录为长文</option>
+                <option value="2">录为短文</option>
+                <option value="3">不录用</option>
+              </select>
+              &nbsp; &nbsp; &nbsp; 
+              <input type="submit" id="save" name="save" value="录用" class="button">
+              &nbsp; 
+              <input name="Button" type="button" onClick="window.close()" class="button" value="返回"></td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td>&nbsp; </tr>
+        </table>
+      </form></td>
+  </tr>
+</table>
+<div class="spacer_20"></div>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" class="footer">
+  <tr>
+    <td><a href="/submission/www.myconf.org">MyConf.org</a>&nbsp;
+	&#153;&nbsp;2007&nbsp;&copy;&nbsp;All Right Reserved.&nbsp;&nbsp;
+	Powered by <a href="http://www.myconf.org" target="_blank">MYCONF</a>&nbsp;1.0&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

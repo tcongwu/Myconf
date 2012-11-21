@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>系统管理员</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<link href="/css/global.css" rel="stylesheet" type="text/css">
+<SCRIPT language="javascript" src="/js/common.js" type="text/javascript"></SCRIPT>
+</head>
+
+<body onLoad="listExpert()">
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="160"><img src="/images/logo.gif" width="158" height="60"></td>
+    <td width="618"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="19">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td class="banner_block">系统管理员<span class="gray">——</span><span class="blackbold">ICCE2004</span></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width="778" height="31" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="10" class="channel_bar_left">&nbsp;</td>
+    <td width="448" class="channel_bar_bg"><span class="bartitle">&nbsp;把稿件分发给评审专家：</span></td>
+    <td width="310" style="PADDING-TOP: 2px;" align="right" class="channel_bar_bg">&nbsp; 
+      </td>
+    <td width="10" class="channel_bar_right">&nbsp;</td>
+  </tr>
+</table>
+<script language="JavaScript">
+function listExpert(){
+	var nameList="";
+	if(assign.expertId==null){
+		return;
+	}
+	if(assign.expertId.length==null){
+		if(assign.expertId.checked){
+			eval("nameList=assign.expertName"+i+"value");
+		}
+	}else{
+		for(var i=0;i<assign.expertId.length;i++){
+			if(assign.expertId[i].checked){
+				if(nameList==""){
+					eval("nameList=assign.expertName"+assign.expertId[i].value+".value");
+				}else{
+					eval("nameList=nameList+', '+assign.expertName"+assign.expertId[i].value+".value");
+				}
+			}
+		}
+	}
+	expertList.innerText=nameList;
+}
+</script>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" style="MARGIN-TOP: 10px;">
+  <tr> 
+    <td valign="top" class="pagecontent"><form action="/paper.do" method="post" name="assign" id="assign">
+        <input name="eventSubmit_Assign" type="hidden" id="eventSubmit_Assign" value="1">
+        <input name="id" type="hidden" id="id" value="1">
+        <br>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form">
+          <tr>
+            <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_note">
+                <tr> 
+                  <td> <li>如果您希望某个专家评审该稿件，请从下面的专家列表中选中他前面的复选框，然后单击【确定】按钮。</li>
+                    <li>【竞评的专家】指的是对当前稿件表示了评审意向的专家。</li>
+                    <li>【稿件数】指的是已经分配给专家评审的稿件数量。</li>
+                  </td>
+                </tr>
+              </table></td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="16%" class="form_row_title">标题：</td>
+            <td class="form_row_content_title">单击【稿件标题】超链接，可以下载稿件的完整文</td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="16%" class="form_row_title">第1作者：</td>
+            <td class="form_row_content_author">斌 李, binli@tsinghua.edu.cn, 电教中心</td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="16%" class="form_row_title">第2作者：</td>
+            <td class="form_row_content_author">斌 李, binli@tsinghua.edu.cn, 电教中心</td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="16%" class="form_row_title">第3作者：</td>
+            <td class="form_row_content_author">斌 李, binli@tsinghua.edu.cn, 电教中心</td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="16%" class="form_row_title">所属主题：</td>
+            <td class="form_row_content_title">专家评审该稿件</td>
+          </tr>
+        </table>
+        <table id="confirm" width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="16%" valign="top" class="form_row_title">摘要：</td>
+            <td class="form_row_content_abstract"><font color="#000000">&lt;/table&gt;<br>
+              &lt;table width=&quot;88%&quot; border=&quot;0&quot; align=&quot;center&quot; 
+              cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; class=&quot;form_row&quot;&gt;<br>
+              &lt;tr&gt; <br>
+              &lt;td height=&quot;25&quot; class=&quot;form_row_content&quot;&gt;<br>
+              &lt;div class=&quot;spacer_20&quot;&gt;&lt;/div&gt;<br>
+              &lt;input name=&quot;pfile&quot; type=&quot;file&quot; id=&quot;pfile&quot; 
+              size=&quot;58&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+              &amp;nbsp; &amp;nbsp; &lt;a href=&quot;&lt;html:rewrite page=&quot;/viewpaper.jsp?id=&quot;/&gt;&lt;%=paper.getId()%&gt;&quot; 
+              target=&quot;_blank&quot; class=&quot;blue&quot;&gt;&lt;bean:message 
+              key=&quot;page.modpaper.check&quot; bundle=&quot;author&quot;/&gt;&lt;/a&gt;<br>
+              &lt;div class=&quot;spacer_20&quot;&gt;&lt;/div&gt;&lt;/td&gt;<br>
+              &lt;/tr&gt;<br>
+              &lt;/table&gt;<br>
+              </font></td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="16%" class="form_row_title">竞评的专家：</td>
+            <td class="form_row_content_abstract">张三, 李四, 王五</td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="16%" class="form_row_title">评审专家：</td>
+            <td class="form_row_content_title" id="expertList">张三, 李四, 王五</td>
+          </tr>
+        </table>
+        <table width="90%" align="center" cellpadding="0" cellspacing="0" class="line_solid">
+          <tr> 
+            <td width="52%"> <div class="spacer_20"></div>
+              <div class="line_dashed"></div>
+              <div class="spacer_10"></div></td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="3" cellspacing="1" class="table">
+          <tr> 
+            <td width="5%" align="center" nowrap class="table_head">选中</td>
+            <td width="14%" class="table_head" nowrap>专家姓名</td>
+            <td width="22%" nowrap class="table_head">工作单位</td>
+            <td width="30%" nowrap class="table_head">研究方向</td>
+            <td width="22%" class="table_head" nowrap>email</td>
+            <td width="7%" align="center" nowrap class="table_head">稿件数</td>
+          </tr>
+          <tr> 
+            <td align="center" class="table_cell"><input name="expertId" type="checkbox" id="expertId" onClick="listExpert()" value="1"></td>
+            <td class="table_cell">q 
+              <input name="expertName1" type="hidden" id="expertName1" value="aaa"/>
+            </td>
+            <td class="table_cell">5</td>
+            <td class="table_cell">0</td>
+            <td class="table_cell">binli </td>
+            <td align="center" class="table_cell">3 </td>
+          </tr>
+          <tr> 
+            <td align="center" nowrap class="table_cell"><input name="expertId" type="checkbox" onClick="listExpert()" id="expertId" value="2"></td>
+            <td class="table_cell">q
+              <input name="expertName2" type="hidden" id="expertName2" value="bbb"/></td>
+            <td class="table_cell">5</td>
+            <td class="table_cell">0</td>
+            <td class="table_cell">leebin@126.com </td>
+            <td align="center" class="table_cell">5</td>
+          </tr>
+        </table>
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td class="form_row_submit"><input type="submit" id="sb" name="save" value="确定" class="button"> 
+              <input name="Button" type="button" onClick="window.close()" class="button" value="返回"> 
+          </tr>
+        </table>
+        <br>
+      </form></td>
+  </tr>
+</table>
+<div class="spacer_20"></div>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" class="footer">
+  <tr>
+    <td><a href="/submission/www.myconf.org">MyConf.org</a>&nbsp;
+	&#153;&nbsp;2007&nbsp;&copy;&nbsp;All Right Reserved.&nbsp;&nbsp;
+	Powered by <a href="http://www.myconf.org" target="_blank">MYCONF</a>&nbsp;1.0&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.myconf.beans">
+
+	<class name="LangBean" table="Myconf_SiteLang" batch-size="5" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="assigned"/>
+		</id>
+
+		<property name="languange" type="string" length="45" not-null="true" index="site_language_idx"/>
+		<property name="confName" column="confname" type="string" length="255"/>
+		<property name="shortName" column="shortname" type="string" length="45"/>
+		<property name="template" type="string" length="45"/>
+		<property name="copyright" type="string" length="255"/>
+		<property name="email" type="string" length="50"/>
+		
+		<property name="published" type="integer"/>
+		<property name="isDefault" column="isdefault" type="integer"/>
+		
+		<property name="createTime" type="timestamp">
+			<column name="createtime" default="null"/>
+		</property>
+		<property name="updateTime" type="timestamp">
+			<column name="updatetime" default="null"/>
+		</property>
+
+		<property name="show1"  column="show1"   type="integer"/>
+		<property name="show2"   column="show2"  type="integer"/>
+		
+		<bag name="menus" lazy="true" inverse="true" cascade="delete">
+			<key column="lang"/>
+			<one-to-many class="MenuBean"/>
+		</bag>
+
+		<bag name="contents" lazy="true" inverse="true" cascade="delete">
+			<key column="lang"/>
+			<one-to-many class="ContentBean"/>
+		</bag>
+		
+	</class>
+
+	<class name="MenuBean" table="Myconf_SiteMenu" batch-size="20" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<many-to-one name="lang" column="lang" class="LangBean" cascade="none" update="false"/>
+		<property name="menuType" column="menutype" type="string" length="10"/>
+		<property name="menuName" column="menuname" type="string" length="100" not-null="true" unique="true"/>
+		
+		<property name="link" type="string" length="255" not-null="true"/>
+		<property name="type" type="string" length="10" not-null="true"/>
+		<property name="openType" column="opentype" type="string" length="20"/>
+		<property name="style" type="string" length="50"/>
+		
+		<property name="published" type="integer"/>
+		<property name="ordering" type="integer"/>
+		
+		<property name="creator" type="integer"/>
+		<property name="createTime" type="timestamp">
+			<column name="createtime" default="null"/>
+		</property>
+		<property name="modifier" type="integer"/>
+		<property name="modifyTime" type="timestamp">
+			<column name="modifytime" default="null"/>
+		</property>
+
+	</class>
+
+	<class name="ContentBean" table="Myconf_SiteContent" batch-size="20" dynamic-update="true">
+		
+    	<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+		
+		<many-to-one name="lang" column="lang" class="LangBean" cascade="none" update="false"/>
+		<property name="title" type="string" length="255" not-null="true" unique="true"/>
+		<property name="pagetext" column="pagetext" type="string" length="50000" not-null="true"/>
+		
+		<property name="sectionId" column="sectionid" type="integer"/>
+		<property name="version" type="integer"/>
+		<property name="published" type="integer"/>
+		<property name="ordering" type="integer"/>
+		<property name="hits" type="integer"/>
+		
+		<property name="creator" type="integer"/>
+		<property name="createTime" type="timestamp">
+			<column name="createtime" default="null"/>
+		</property>
+		<property name="modifier" type="integer"/>
+		<property name="modifyTime" type="timestamp">
+			<column name="modifytime" default="null"/>
+		</property>
+		
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>MyConf.org--</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<SCRIPT language="javascript" src="/js/common.js" type="text/javascript"></SCRIPT>
+</head>
+
+<body onLoad="init();">
+<table width="778" border="0" align="center" cellpadding="3" cellspacing="0" class="float_bar">
+  <tr> 
+    <td width="268">&nbsp;<a href="#"><b>简体</b></a>&nbsp;|&nbsp;<a href="#"><b>繁体</b></a>&nbsp;|&nbsp;<a href="#"><b>ENGLISH</b></a></td>
+    <td width="498" align="right">&nbsp;</td>
+  </tr>
+</table>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="160"><img src="images/logo.gif" width="158" height="60"></td>
+    <td width="618"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="19">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="banner_block">登录</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width="778" height="31" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="10" class="channel_bar_left">&nbsp;</td>
+    <td width="448" class="channel_bar_bg"><strong style="font-size:14px">&nbsp;请输入您的电子邮件和密码：</strong></td>
+    <td width="310" style="PADDING-TOP: 2px;" align="right" class="channel_bar_bg">&nbsp; 
+      </td>
+    <td width="10" class="channel_bar_right">&nbsp;</td>
+  </tr>
+</table>
+<SCRIPT language="javascript">
+function init()
+{
+	var rem=getCookie("rem");
+	var uname=getCookie("uname")
+	if(!rem||rem==1){
+		login.rem.checked=true;
+	}
+	if(uname&&uname!=0){
+		login.email.value=uname;
+		login.password.focus();
+	}else{
+		login.email.focus();
+	}
+}
+
+function save()
+{
+	if(login.rem.checked){
+		setCookie("rem", 1);
+		setCookie("uname", login.email.value);
+	}else{
+		setCookie("rem", 0);
+		setCookie("uname", 0);
+	}
+}
+
+function checkForm()
+{
+	if (login.email.value.length == 0) {
+		alert("请输入您的email");
+		login.email.focus();
+		return false;
+	}
+	if (!isEmail(login.email.value)) {
+		alert("您输入的电子邮件地址格式有误，请重新输入！");
+		login.email.focus();
+		login.email.select();
+		return false;
+	}
+	if (login.password.value.length == 0) {
+		alert("请输入您的密码");
+		login.password.focus();
+		return false;
+	}
+	return true;
+}
+</script>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" style="MARGIN-TOP: 10px;">
+  <tr> 
+    <td valign="top" class="pagecontent"><form action="/login.do" method="post" onSubmit="save();return checkForm();" name="login" id="login">
+        <input name="url" type="hidden" id="url" value="1">
+        <br>
+        <table width="60%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="25%" class="form_row_title">电子邮件：</td>
+            <td width="75%" class="form_row_content"><input name="email" type="text" id="email" size="32"></td>
+          </tr>
+        </table>
+        <table width="60%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td width="25%" class="form_row_title">密码：</td>
+            <td width="75%" class="form_row_content"><input name="password" type="password" id="password" size="32"></td>
+          </tr>
+        </table>
+        <table width="60%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td class="form_row_content">
+              <input name="rem" type="checkbox" id="rem" value="1" checked>
+              记住我的email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="blue">忘记密码？</a> 
+            </td>
+          </tr>
+        </table>
+        <table width="60%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+          <tr> 
+            <td class="form_row_submit"><input name="eventSubmit_Login" type="submit" class="button" id="eventSubmit_Login" value="登录"> 
+              <input name="back" type="button" class="button" onClick="window.history.back()" id="back" value="返回"> </td>
+          </tr>
+        </table>
+        <br>
+      </form></td>
+  </tr>
+</table>
+<div class="spacer_20"></div>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" class="footer">
+  <tr>
+    <td><a href="www.myconf.org">MyConf.org</a>&nbsp;
+	&#153;&nbsp;2007&nbsp;&copy;&nbsp;All Right Reserved.&nbsp;&nbsp;
+	Powered by <a href="http://www.myconf.org" target="_blank">MYCONF</a>&nbsp;1.0&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

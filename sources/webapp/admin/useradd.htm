@@ -1,0 +1,500 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>系统管理员</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<link href="/css/global.css" rel="stylesheet" type="text/css">
+<SCRIPT language="javascript" src="/js/common.js" type="text/javascript"></SCRIPT>
+</head>
+
+<body>
+<table width="778" border="0" align="center" cellpadding="3" cellspacing="0" class="float_bar">
+  <tr> 
+    <td width="268">&nbsp;<a href="#"><b>Powered by MyConf</b></a></td>
+    <td width="498" align="right">欢迎光临，系统管理员 | <a href="#">个人信息</a> | <a href="#">修改密码</a> 
+      | <a href="#">注销</a>&nbsp;</td>
+  </tr>
+</table>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="160"><img src="/images/logo.gif" width="158" height="60"></td>
+    <td width="618"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="19">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="banner_block">系统管理员</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width="778" height="31" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="10" class="channel_bar_left">&nbsp;</td>
+    <td width="448" class="channel_bar_bg"><div class="fleft sitenav"><a href="/">投稿与评审</a><a class="split"></a><a href="/html/diary/">会议网站</a><a class="nav_on"><a class="selected" href="/html/photo/">用户管理</a></a></div></td>
+    <td width="310" style="PADDING-TOP: 2px;" align="right" class="channel_bar_bg"><select name="select">
+        <option selected>切换角色</option>
+        <option value="1">系统管理员</option>
+      </select>
+      &nbsp;</td><td width="10" class="channel_bar_right">&nbsp;</td>
+  </tr>
+</table>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" style="MARGIN-TOP: 10px;">
+  <tr>
+    <td width="180" height="55" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="leftmenu">
+        <tr> 
+          <td height="41">
+		  	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="embed_module">
+              <tr>
+                <td class="module_title"><b>用户管理</b></td>
+              </tr>
+              <tr>
+                <td class="module_content">
+				<span class="user_all"><a href="/"><b>所有用户</b></a></span>
+		        <span class="user_add"><a href="/"><b>添加新用户</b></a></span>
+				<span class="user_adds"><a href="/"><b>批量添加评审专家</b></a></span>
+		        <span class="user_recycle"><a href="/"><b>用户回收站</b></a></span>
+				<span class="user_section"><a href="/">网站管理员</a></span>
+				<span class="user_section"><a href="/">投稿用户</a></span>
+				<span class="user_section"><a href="/">评审专家</a></span>
+		        <span class="user_section"><a href="/">系统管理员</a></span></td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="embed_module_bottom">
+              <tr> 
+                <td class="module_title"><b>网站统计</b></td>
+              </tr>
+              <tr> 
+                <td class="module_content">
+    	    	<span class="stat_item">建站时间: 2006/12/25</span>
+				<span class="stat_item">稿件：1 篇</span>
+				<span class="stat_item">投稿作者：0 人</span>
+				<span class="stat_item">注册用户：<a href="/html/users.vm?sid=1">0</a></span>
+				<span class="stat_item">今日访问：1</span>
+				<span class="stat_item">本周访问：1</span>
+				<span class="stat_item">本月访问：3</span>
+				<span class="stat_item">全部访问：5</span>
+				</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+    <td width="598" valign="top" class="pagecontent">
+	<SCRIPT language="javascript">
+	function checkForm()
+	{
+		if (adduser.email.value.length == 0) {
+			alert("请输入您的email");
+			adduser.email.focus();
+			return false;
+		}
+		if (!isEmail(adduser.email.value)) {
+			alert("您输入的电子邮件地址格式有误，请重新输入！");
+			adduser.email.focus();
+			adduser.email.select();
+			return false;
+		}
+		if (adduser.password.value.length == 0) {
+			alert("请输入您的密码");
+			adduser.password.focus();
+			return false;
+		}
+		if (adduser.firstName.value.length == 0) {
+			alert("带*号的为必填项，请填写！");
+			adduser.firstName.focus();
+			return false;
+		}
+		if (adduser.lastName.value.length == 0) {
+			alert("带*号的为必填项，请填写！");
+			adduser.lastName.focus();
+			return false;
+		}
+		if (adduser.workLocation.value.length == 0) {
+			alert("带*号的为必填项，请填写！");
+			adduser.workLocation.focus();
+			return false;
+		}
+		return true;
+	}
+	</script>
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="pagecontent_title"><b>添加新用户</b></td>
+        </tr>
+        <tr> 
+          <td height="16" class="pagecontent_right"></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="form">
+        <tr>
+          <td><table width="100%" border="0" cellpadding="0" cellspacing="0" class="form_note">
+              <tr>
+                <td><div class="spacer_5"></div>
+				  <li>email、密码、姓、名和工作单位必须填写。</li>
+                  <div class="spacer_5"></div></td>
+              </tr>
+            </table>
+            <form action="/user.do" method="post" onSubmit="return checkForm()" name="adduser" id="adduser">
+              <input name="eventSubmit_AddUser" type="hidden" id="eventSubmit_AddUser" value="1">
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td width="20%" height="25" class="form_row_title">*email：</td>
+                  <td class="form_row_content"><input name="email" type="text" id="email" size="48"></td>
+                </tr>
+              </table>
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td width="20%" height="25" class="form_row_title">*密码：</td>
+                  <td class="form_row_content"><input name="password" type="text" id="password" size="48"></td>
+                </tr>
+              </table>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="form_row">
+                <tr> 
+                  <td width="20%" class="form_row_title">用户角色：</td>
+                  <td class="form_row_content"> &nbsp;&nbsp;{如果希望用户拥有某角色，请选中相应的复选框；反之请取消选中}</td>
+                </tr>
+              </table>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td class="form_row_content"> <div class="spacer_5"></div>
+                    <input name="isAuthor" type="checkbox" id="isAuthor" value="1">
+                    投稿用户 
+                    <input name="isExpert" type="checkbox" id="isExpert" value="1">
+                    评审专家 
+                    <input name="isContent" type="checkbox" id="isContent" value="1">
+                    网站管理员 
+                    <input name="isAdmin" type="checkbox" id="isAdmin" value="1">
+                    系统管理员 
+                    <div class="spacer_10"></div></td>
+                </tr>
+              </table>
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td width="20%" height="25" class="form_row_title">称呼：</td>
+                  <td width="30%" class="form_row_content"><select name="title" id="title">
+                      <option> </option>
+                      <option value="Mr.">Mr.</option>
+                      <option value="Ms.">Ms.</option>
+                      <option value="Dr.">Dr.</option>
+                      <option value="Prof.">Prof.</option>
+                      <option value="先生">先生</option>
+                      <option value="女士">女士</option>
+                      <option value="博士">博士</option>
+                      <option value="教授">教授</option>
+                    </select></td>
+                  <td width="20%" class="form_row_content">&nbsp;</td>
+                  <td width="30%" class="form_row_content">&nbsp;</td>
+                </tr>
+              </table>
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td width="20%" height="25" class="form_row_title">*名：</td>
+                  <td width="30%" class="form_row_grid"><input name="firstName" type="text" id="firstName" size="22"></td>
+                  <td width="20%" class="form_row_title">传真：</td>
+                  <td width="30%" class="form_row_content"><input name="fax" type="text" id="fax" size="22"></td>
+                </tr>
+              </table>
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td width="20%" height="25" class="form_row_title">*姓：</td>
+                  <td width="30%" class="form_row_grid">
+<input name="lastName" type="text" id="lastName" size="22"></td>
+                  <td width="20%" class="form_row_title">详细地址：</td>
+                  <td width="30%" class="form_row_content"><input name="address" type="text" id="address" size="22"></td>
+                </tr>
+              </table>
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td width="20%" height="25" class="form_row_title">*工作单位：</td>
+                  <td width="30%" class="form_row_grid"><input name="workLocation" type="text" id="workLocation" size="22"></td>
+                  <td width="20%" class="form_row_title">所在省份：</td>
+                  <td width="30%" class="form_row_content"><input name="state" type="text" id="state" size="22"></td>
+                </tr>
+              </table>
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td width="20%" height="25" class="form_row_title">研究方向：</td>
+                  <td width="30%" class="form_row_grid">
+<input name="research" type="text" id="research" size="22"></td>
+                  <td width="20%" class="form_row_title">所属国家：</td>
+                  <td width="30%" class="form_row_content"> <SELECT name=country size=1 id="country" style="width:150px;">
+                      <OPTION value="" selected>请选择</OPTION>
+                      <OPTION value="Afghanistan">Afghanistan</OPTION>
+                      <OPTION value="Albania">Albania</OPTION>
+                      <OPTION value="Algeria">Algeria</OPTION>
+                      <OPTION value="American Samoa">American Samoa</OPTION>
+                      <OPTION value="Andorra">Andorra</OPTION>
+                      <OPTION value="Angola">Angola</OPTION>
+                      <OPTION value="Anguilla">Anguilla</OPTION>
+                      <OPTION value="Antarctica">Antarctica</OPTION>
+                      <OPTION value="Antigua and Barbuda">Antigua and Barbuda</OPTION>
+                      <OPTION value="Argentina">Argentina</OPTION>
+                      <OPTION value="Armenia">Armenia</OPTION>
+                      <OPTION value="Aruba">Aruba</OPTION>
+                      <OPTION value="Australia">Australia</OPTION>
+                      <OPTION value="Austria">Austria</OPTION>
+                      <OPTION value="Azerbaijan">Azerbaijan</OPTION>
+                      <OPTION value="Bahamas">Bahamas</OPTION>
+                      <OPTION value="Bahrain">Bahrain</OPTION>
+                      <OPTION value="Bangladesh">Bangladesh</OPTION>
+                      <OPTION value="Barbados">Barbados</OPTION>
+                      <OPTION value="Belarus">Belarus</OPTION>
+                      <OPTION value="Belgium">Belgium</OPTION>
+                      <OPTION value="Belize">Belize</OPTION>
+                      <OPTION value="Benin">Benin</OPTION>
+                      <OPTION value="Bermuda">Bermuda</OPTION>
+                      <OPTION value="Bhutan">Bhutan</OPTION>
+                      <OPTION value="Bolivia">Bolivia</OPTION>
+                      <OPTION value="Bosnia and Herzegovina">Bosnia and Herzegovina</OPTION>
+                      <OPTION value="Botswana">Botswana</OPTION>
+                      <OPTION value="Brazil">Brazil</OPTION>
+                      <OPTION value="British Indian Ocean Territory">British Indian 
+                      Ocean Territory</OPTION>
+                      <OPTION value="Brunei Darussalam">Brunei Darussalam</OPTION>
+                      <OPTION value="Bulgaria">Bulgaria</OPTION>
+                      <OPTION value="Burkina Faso">Burkina Faso</OPTION>
+                      <OPTION value="Burundi">Burundi</OPTION>
+                      <OPTION value="Cambodia">Cambodia</OPTION>
+                      <OPTION value="Cameroon">Cameroon</OPTION>
+                      <OPTION value="Canada">Canada</OPTION>
+                      <OPTION value="Cape Verde">Cape Verde</OPTION>
+                      <OPTION value="Cayman Islands">Cayman Islands</OPTION>
+                      <OPTION value="Central African Republic">Central African 
+                      Republic</OPTION>
+                      <OPTION value="Chad">Chad</OPTION>
+                      <OPTION value="Chile">Chile</OPTION>
+                      <OPTION value="China">China</OPTION>
+                      <OPTION value="China, Hong Kong">China, Hong Kong</OPTION>
+                      <OPTION value="China, Taiwan">China, Taiwan</OPTION>
+                      <OPTION value="Colombia">Colombia</OPTION>
+                      <OPTION value="Comoros">Comoros</OPTION>
+                      <OPTION value="Congo">Congo</OPTION>
+                      <OPTION value="Congo, Dem. Republic of the">Congo, Dem. 
+                      Republic of the</OPTION>
+                      <OPTION value="Cook Islands">Cook Islands</OPTION>
+                      <OPTION value="Costa Rica">Costa Rica</OPTION>
+                      <OPTION value="Croatia">Croatia</OPTION>
+                      <OPTION value="Cuba">Cuba</OPTION>
+                      <OPTION value="Cyprus">Cyprus</OPTION>
+                      <OPTION value="Czech Republic">Czech Republic</OPTION>
+                      <OPTION value="Denmark">Denmark</OPTION>
+                      <OPTION value="Djibouti">Djibouti</OPTION>
+                      <OPTION value="Dominica">Dominica</OPTION>
+                      <OPTION value="Dominican Republic">Dominican Republic</OPTION>
+                      <OPTION value="East Timor">East Timor</OPTION>
+                      <OPTION value="Ecuador">Ecuador</OPTION>
+                      <OPTION value="Egypt">Egypt</OPTION>
+                      <OPTION value="El Salvador">El Salvador</OPTION>
+                      <OPTION value="Equatorial Guinea">Equatorial Guinea</OPTION>
+                      <OPTION value="Eritrea">Eritrea</OPTION>
+                      <OPTION value="Estonia">Estonia</OPTION>
+                      <OPTION value="Ethiopia">Ethiopia</OPTION>
+                      <OPTION value="Falkland Islands">Falkland Islands</OPTION>
+                      <OPTION value="Faroe Islands">Faroe Islands</OPTION>
+                      <OPTION value="Fiji">Fiji</OPTION>
+                      <OPTION value="Finland">Finland</OPTION>
+                      <OPTION value="France">France</OPTION>
+                      <OPTION value="French Guiana">French Guiana</OPTION>
+                      <OPTION value="French olynesia">French olynesia</OPTION>
+                      <OPTION value="Gabon">Gabon</OPTION>
+                      <OPTION value="Gambia">Gambia</OPTION>
+                      <OPTION value="Georgia">Georgia</OPTION>
+                      <OPTION value="Germany">Germany</OPTION>
+                      <OPTION value="Ghana">Ghana</OPTION>
+                      <OPTION value="Gibraltar">Gibraltar</OPTION>
+                      <OPTION value="Greece">Greece</OPTION>
+                      <OPTION value="Greenland">Greenland</OPTION>
+                      <OPTION value="Grenada">Grenada</OPTION>
+                      <OPTION value="Guadeloupe">Guadeloupe</OPTION>
+                      <OPTION value="Guam">Guam</OPTION>
+                      <OPTION value="Guatemala">Guatemala</OPTION>
+                      <OPTION value="Guinea">Guinea</OPTION>
+                      <OPTION value="Guinea-Bissau">Guinea-Bissau</OPTION>
+                      <OPTION value="Guyana">Guyana</OPTION>
+                      <OPTION value="Haiti">Haiti</OPTION>
+                      <OPTION value="Honduras">Honduras</OPTION>
+                      <OPTION value="Hungary">Hungary</OPTION>
+                      <OPTION value="Iceland">Iceland</OPTION>
+                      <OPTION value="India">India</OPTION>
+                      <OPTION value="Indonesia">Indonesia</OPTION>
+                      <OPTION value="Iran">Iran</OPTION>
+                      <OPTION value="Iraq">Iraq</OPTION>
+                      <OPTION value="Ireland">Ireland</OPTION>
+                      <OPTION value="Israel">Israel</OPTION>
+                      <OPTION value="Italy">Italy</OPTION>
+                      <OPTION value="Ivory Coast">Ivory Coast</OPTION>
+                      <OPTION value="Jamaica">Jamaica</OPTION>
+                      <OPTION value="Japan">Japan</OPTION>
+                      <OPTION value="Jordan">Jordan</OPTION>
+                      <OPTION value="Kazakstan">Kazakstan</OPTION>
+                      <OPTION value="Kenya">Kenya</OPTION>
+                      <OPTION value="Kiribati">Kiribati</OPTION>
+                      <OPTION value="Korea, North">Korea, North</OPTION>
+                      <OPTION value="Korea, South">Korea, South</OPTION>
+                      <OPTION value="Kuwait">Kuwait</OPTION>
+                      <OPTION value="Kyrgyzstan">Kyrgyzstan</OPTION>
+                      <OPTION value="Laos">Laos</OPTION>
+                      <OPTION value="Latvia">Latvia</OPTION>
+                      <OPTION value="Lebanon">Lebanon</OPTION>
+                      <OPTION value="Lesotho">Lesotho</OPTION>
+                      <OPTION value="Liberia">Liberia</OPTION>
+                      <OPTION value="Libya">Libya</OPTION>
+                      <OPTION value="Liechtenstein">Liechtenstein</OPTION>
+                      <OPTION value="Lithuania">Lithuania</OPTION>
+                      <OPTION value="Luxembourg">Luxembourg</OPTION>
+                      <OPTION value="Macau">Macau</OPTION>
+                      <OPTION value="Macedonia">Macedonia</OPTION>
+                      <OPTION value="Madagascar">Madagascar</OPTION>
+                      <OPTION value="Malawi">Malawi</OPTION>
+                      <OPTION value="Malaysia">Malaysia</OPTION>
+                      <OPTION value="Maldives">Maldives</OPTION>
+                      <OPTION value="Mali">Mali</OPTION>
+                      <OPTION value="Malta">Malta</OPTION>
+                      <OPTION value="Marshall Islands">Marshall Islands</OPTION>
+                      <OPTION value="Martinique">Martinique</OPTION>
+                      <OPTION value="Mauritania">Mauritania</OPTION>
+                      <OPTION value="Mauritius">Mauritius</OPTION>
+                      <OPTION value="Mayotte">Mayotte</OPTION>
+                      <OPTION value="Mexico">Mexico</OPTION>
+                      <OPTION value="Micronesia, Federated States of">Micronesia, 
+                      Federated States of</OPTION>
+                      <OPTION value="Moldova">Moldova</OPTION>
+                      <OPTION value="Monaco">Monaco</OPTION>
+                      <OPTION value="Mongolia">Mongolia</OPTION>
+                      <OPTION value="Montserrat">Montserrat</OPTION>
+                      <OPTION value="Morocco">Morocco</OPTION>
+                      <OPTION value="Mozambique">Mozambique</OPTION>
+                      <OPTION value="Myanmar">Myanmar</OPTION>
+                      <OPTION value="Namibia">Namibia</OPTION>
+                      <OPTION value="Nauru">Nauru</OPTION>
+                      <OPTION value="Nepal">Nepal</OPTION>
+                      <OPTION value="Netherlands">Netherlands</OPTION>
+                      <OPTION value="Netherlands Antilles">Netherlands Antilles</OPTION>
+                      <OPTION value="New Caledonia">New Caledonia</OPTION>
+                      <OPTION value="New Zealand">New Zealand</OPTION>
+                      <OPTION value="Nicaragua">Nicaragua</OPTION>
+                      <OPTION value="Niger">Niger</OPTION>
+                      <OPTION value="Nigeria">Nigeria</OPTION>
+                      <OPTION value="Niue">Niue</OPTION>
+                      <OPTION value="Norfolk Island">Norfolk Island</OPTION>
+                      <OPTION value="Northern Mariana Islands">Northern Mariana 
+                      Islands</OPTION>
+                      <OPTION value="Norway">Norway</OPTION>
+                      <OPTION value="Oman">Oman</OPTION>
+                      <OPTION value="Pakistan">Pakistan</OPTION>
+                      <OPTION value="Palau">Palau</OPTION>
+                      <OPTION value="Palestinian Territory">Palestinian Territory</OPTION>
+                      <OPTION value="Panama">Panama</OPTION>
+                      <OPTION value="Papua New Guinea">Papua New Guinea</OPTION>
+                      <OPTION value="Paraguay">Paraguay</OPTION>
+                      <OPTION value="Peru">Peru</OPTION>
+                      <OPTION value="Philippines">Philippines</OPTION>
+                      <OPTION value="Pitcairn">Pitcairn</OPTION>
+                      <OPTION value="Poland">Poland</OPTION>
+                      <OPTION value="Portugal">Portugal</OPTION>
+                      <OPTION value="Puerto Rico">Puerto Rico</OPTION>
+                      <OPTION value="Qatar">Qatar</OPTION>
+                      <OPTION value="Reunion">Reunion</OPTION>
+                      <OPTION value="Romania">Romania</OPTION>
+                      <OPTION value="Russia">Russia</OPTION>
+                      <OPTION value="Rwanda">Rwanda</OPTION>
+                      <OPTION value="Saint Helena">Saint Helena</OPTION>
+                      <OPTION value="Saint Kitts and Nevis">Saint Kitts and Nevis</OPTION>
+                      <OPTION value="Saint Lucia">Saint Lucia</OPTION>
+                      <OPTION value="Saint Pierre and Miquelon">Saint Pierre and 
+                      Miquelon</OPTION>
+                      <OPTION value="Saint Vincent and the Grenadines">Saint Vincent 
+                      and the Grenadines</OPTION>
+                      <OPTION value="Samoa">Samoa</OPTION>
+                      <OPTION value="San Marino">San Marino</OPTION>
+                      <OPTION value="Sao Tome and Principe">Sao Tome and Principe</OPTION>
+                      <OPTION value="Saudi Arabia">Saudi Arabia</OPTION>
+                      <OPTION value="Senegal">Senegal</OPTION>
+                      <OPTION value="Seychelles">Seychelles</OPTION>
+                      <OPTION value="Sierra Leone">Sierra Leone</OPTION>
+                      <OPTION value="Singapore">Singapore</OPTION>
+                      <OPTION value="Slovakia">Slovakia</OPTION>
+                      <OPTION value="Slovenia">Slovenia</OPTION>
+                      <OPTION value="Solomon Islands">Solomon Islands</OPTION>
+                      <OPTION value="Somalia">Somalia</OPTION>
+                      <OPTION value="South Africa">South Africa</OPTION>
+                      <OPTION value="Spain">Spain</OPTION>
+                      <OPTION value="Sri Lanka">Sri Lanka</OPTION>
+                      <OPTION value="Sudan">Sudan</OPTION>
+                      <OPTION value="Suriname">Suriname</OPTION>
+                      <OPTION value="Swaziland">Swaziland</OPTION>
+                      <OPTION value="Sweden">Sweden</OPTION>
+                      <OPTION value="Switzerland">Switzerland</OPTION>
+                      <OPTION value="Syria">Syria</OPTION>
+                      <OPTION value="Tajikistan">Tajikistan</OPTION>
+                      <OPTION value="Tanzania">Tanzania</OPTION>
+                      <OPTION value="Thailand">Thailand</OPTION>
+                      <OPTION value="Togo">Togo</OPTION>
+                      <OPTION value="Tokelau">Tokelau</OPTION>
+                      <OPTION value="Tonga">Tonga</OPTION>
+                      <OPTION value="Trinidad And Tobago">Trinidad And Tobago</OPTION>
+                      <OPTION value="Tunisia">Tunisia</OPTION>
+                      <OPTION value="Turkey">Turkey</OPTION>
+                      <OPTION value="Turkmenistan">Turkmenistan</OPTION>
+                      <OPTION value="Turks and Caicos Islands">Turks and Caicos 
+                      Islands</OPTION>
+                      <OPTION value="Tuvalu">Tuvalu</OPTION>
+                      <OPTION value="Uganda">Uganda</OPTION>
+                      <OPTION value="Ukraine">Ukraine</OPTION>
+                      <OPTION value="United Arab Emirates">United Arab Emirates</OPTION>
+                      <OPTION value="United Kingdom">United Kingdom</OPTION>
+                      <OPTION value="United States">United States</OPTION>
+                      <OPTION value="United States Minor Outlying Islands">United 
+                      States Minor Outlying Islands</OPTION>
+                      <OPTION value="Uruguay">Uruguay</OPTION>
+                      <OPTION value="Uzbekistan">Uzbekistan</OPTION>
+                      <OPTION value="Vanuatu">Vanuatu</OPTION>
+                      <OPTION value="Vatican City">Vatican City</OPTION>
+                      <OPTION value="Venezuela">Venezuela</OPTION>
+                      <OPTION value="Viet Nam">Viet Nam</OPTION>
+                      <OPTION value="Virgin Islands, British">Virgin Islands, 
+                      British</OPTION>
+                      <OPTION value="Virgin Islands, U.S.">Virgin Islands, U.S.</OPTION>
+                      <OPTION value="Wallis and Futuna">Wallis and Futuna</OPTION>
+                      <OPTION value="Western Sahara">Western Sahara</OPTION>
+                      <OPTION value="Yemen">Yemen</OPTION>
+                      <OPTION value="Zambia">Zambia</OPTION>
+                      <OPTION value="Zimbabwe">Zimbabwe</OPTION>
+                      <OPTION value="other">other</OPTION>
+                    </SELECT></td>
+                </tr>
+              </table>
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td width="20%" height="25" class="form_row_title">电话：</td>
+                  <td width="30%" class="form_row_grid">
+<input name="phone" type="text" id="phone" size="22"></td>
+                  <td width="20%" class="form_row_title">邮政编码：</td>
+                  <td width="30%" class="form_row_content"><input name="postcode" type="text" id="postcode" size="22"></td>
+                </tr>
+              </table>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" class="form_row">
+                <tr> 
+                  <td nowrap class="form_row_submit"><input name="sub" type="submit" class="button" id="sub" value="添加新用户">
+                  </td>
+                </tr>
+              </table>
+            </form>
+            
+          </td>
+        </tr>
+      </table> 
+    </td>
+  </tr>
+</table>
+<div class="spacer_20"></div>
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" class="footer">
+  <tr>
+    <td><a href="www.myconf.org">MyConf.org</a>&nbsp;
+	&#153;&nbsp;2007&nbsp;&copy;&nbsp;All Right Reserved.&nbsp;&nbsp;
+	Powered by <a href="http://www.myconf.org" target="_blank">MYCONF</a>&nbsp;1.0&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

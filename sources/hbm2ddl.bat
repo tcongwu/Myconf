@@ -1,0 +1,1 @@
+java -cp "packages/hibernate3.jar;%JAVA_HOME%/lib/tools.jar;webapp/WEB-INF/lib/commons-logging.jar;webapp/WEB-INF/lib/dom4j-1.6.1.jar;webapp/WEB-INF/lib/commons-collections-2.1.1.jar;webapp/WEB-INF/lib/mysql-connector-java-3.1.8-bin.jar" org.hibernate.tool.hbm2ddl.SchemaExport --delimiter=; --properties=hibernate.properties --output=myconf.ddl all.hbm.xml
